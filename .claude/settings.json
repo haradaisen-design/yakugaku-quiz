@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.secrets/**)",
+      "Edit(./.secrets/**)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "PowerShell(git push --force*)",
+      "PowerShell(git push -f*)"
+    ]
+  }
+}

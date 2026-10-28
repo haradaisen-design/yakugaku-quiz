@@ -1,0 +1,14 @@
+# ホワイトリスト方式: いったんすべてを対象外にし、公開してよいものだけを許可する。
+# 授業資料（薬学部授業資料/）・平文の問題（quiz-bank/）・パスワード（.secrets/）などは
+# ここに書かれていないので、誤って GitHub に送られることはない。
+/*
+!/.gitignore
+!/CLAUDE.md
+!/README.md
+!/*.cmd
+!/docs/
+!/scripts/
+!/.claude/
+
+# 個人用の設定は公開しない
+/.claude/settings.local.json

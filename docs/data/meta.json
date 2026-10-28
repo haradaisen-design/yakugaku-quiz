@@ -1,0 +1,12 @@
+{
+  "format": 1,
+  "dataVersion": "4fd6a00cc7c0",
+  "kdf": {
+    "name": "PBKDF2",
+    "hash": "SHA-256",
+    "iterations": 600000,
+    "salt": "+TSWkbaK62rmbgoKvSJ+4Q=="
+  },
+  "check": "4tIeRrBm5gmnWXCI6mGt197OwooLLqejAQAcpAjgF/jfopcv6hJCGE66ru8=",
+  "catalog": "c.4fd6a00cc7c0.bin"
+}
