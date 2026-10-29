@@ -43,6 +43,15 @@ export function validateBank() {
       }
     }
 
+    // 学習内容がない資料（講義日程など）は「問題にしない」記録だけを持つ
+    if (d.skip !== undefined && typeof d.skip !== 'boolean') err('"skip" は true / false にしてください');
+    if (d.skip === true) {
+      if (!isStr(d.skipReason)) err('"skipReason"（問題にしない理由）がありません');
+      if (d.questions?.length) err('問題にしない資料（skip）に questions があります');
+      materials.push({ file, where, data: d, counts: Object.fromEntries(TYPES.map((t) => [t, 0])), skipped: true });
+      continue;
+    }
+
     // 要点（網羅のための一覧）
     const kpIds = new Set();
     if (!Array.isArray(d.keyPoints) || d.keyPoints.length === 0) err('"keyPoints"（要点の一覧）がありません');

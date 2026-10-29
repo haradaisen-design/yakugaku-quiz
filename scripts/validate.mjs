@@ -9,6 +9,7 @@ const { errors, warnings, materials } = validateBank();
 
 if (!quiet) {
   for (const m of materials) {
+    if (m.skipped) { console.log(`${m.where}: 問題にしない資料（${m.data.skipReason}）`); continue; }
     const total = TYPES.reduce((s, t) => s + m.counts[t], 0);
     const breakdown = TYPES.map((t) => `${TYPE_LABELS[t]}${m.counts[t]}`).join(' ');
     console.log(`${m.where}: ${total}問（${breakdown}）要点${m.data.keyPoints?.length ?? 0}`);

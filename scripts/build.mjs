@@ -91,7 +91,9 @@ const writeEncrypted = (name, json) => {
   return true;
 };
 const groups = new Map();
-for (const { data: d } of materials) {
+// 「問題にしない資料」（講義日程など）はアプリに載せない
+const quizMaterials = materials.filter((m) => !m.skipped);
+for (const { data: d } of quizMaterials) {
   const k = `${d.term}\u0000${d.subject}`;
   if (!groups.has(k)) groups.set(k, { term: d.term, subject: d.subject, materials: [] });
   groups.get(k).materials.push(d);
@@ -155,7 +157,7 @@ for (const t of catalog.terms) {
 }
 
 // 7. 結果
-const materialCount = materials.length;
+const materialCount = quizMaterials.length;
 if (!quiet) {
   for (const [term, subjects] of terms) {
     console.log(`【${term}】`);
