@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "dataVersion": "9306ab47f1c6",
+  "dataVersion": "f37534437b05",
   "kdf": {
     "name": "PBKDF2",
     "hash": "SHA-256",
@@ -8,5 +8,5 @@
     "salt": "+TSWkbaK62rmbgoKvSJ+4Q=="
   },
   "check": "4tIeRrBm5gmnWXCI6mGt197OwooLLqejAQAcpAjgF/jfopcv6hJCGE66ru8=",
-  "catalog": "c.9306ab47f1c6.bin"
+  "catalog": "c.f37534437b05.bin"
 }
